@@ -17,11 +17,12 @@ const Contact = () => {
             <p>Nagpur, Maharashtra, India. </p>
           </div>
         </div>
-        <form action="">
+        <form action="https://getform.io/f/lbkmxnkb" method="POST">
           <div className="rightdiv flex  flex-col gap-5  ">
             <div className=" flex   gap-5">
               <input
                 type="text"
+                name="name"
                 className="  outline-none w-full placeholder:text-white  py-1 px-2 rounded-md bg-[#352651] border border-[#b035b0]  "
                 required
                 placeholder="Name"
@@ -29,6 +30,7 @@ const Contact = () => {
               <input
                 className=" w-full  outline-none placeholder:text-white py-1 px-2 rounded-md bg-[#352651] border border-[#b035b0]"
                 type="email"
+                name="email"
                 required
                 placeholder="Email"
               />
