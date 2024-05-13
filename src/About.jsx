@@ -14,7 +14,7 @@ const About = () => {
           <img
             src={myImg}
             alt=""
-            className=" w-[500px] h-[400px] object-cover object-center rounded-md "
+            className=" w-[500px] h-[400px] object-cover object-center rounded-md shadow-lg hover:shadow-[#6366F1]"
           />
         </div>
         <div className="xs:w-full md:w-[50%] text-justify ">

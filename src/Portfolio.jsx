@@ -44,7 +44,7 @@ const Portfolio = () => {
       <div className="  flex justify-center flex-wrap gap-5  ">
       {
         works.map((el,i)=>(
-          <div key={i} className=" border w-[300px] h-[320px] p-3 rounded-md ">
+          <div key={i} className=" border-2 w-[300px] h-[320px] p-3 rounded-md  border-[#e782f9] shadow-md hover:shadow-[#d56ee7]">
         <img
           src={el.Img}
           alt="projectImg"

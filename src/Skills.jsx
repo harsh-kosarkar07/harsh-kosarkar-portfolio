@@ -75,7 +75,7 @@ const Skills = () => {
               {data1.map((ele, i) => (
                 <div
                   key={i}
-                  className="map-1 flex gap-2 flex-col border-2 border-[#e782f9]   w-[140px] h-[100px] p-3 items-center "
+                  className="map-1 flex gap-2 flex-col border-2 border-[#e782f9]   w-[140px] h-[100px] p-3 items-center shadow-lg hover:shadow-[#d56ee7] "
                 >
                   <p>
                     {ele.icon}
@@ -91,7 +91,7 @@ const Skills = () => {
               Tools <span className="text-[#e782f9]"> I use </span>
             </h1>
          <div className="my-5 flex flex-wrap gap-5">
-         {  data2.map((ele2,i)=>(<div key={i} className="map-2 flex gap-2 flex-col border-2 border-[#e782f9]   w-[140px] h-[100px] p-3 items-center">
+         {  data2.map((ele2,i)=>(<div key={i} className="map-2 flex gap-2 flex-col border-2 border-[#e782f9]   w-[140px] h-[100px] p-3 items-center shadow-lg hover:shadow-[#d56ee7]">
               <span>
                 {ele2.icon}
                 
