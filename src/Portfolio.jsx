@@ -32,7 +32,7 @@ const Portfolio = () => {
       title:"My Portfolio",
       desc:"This is my personal portfolio where is tried to describe all about me. I given my best to  create this.",
       demo:"#",
-      code:"#",
+      code:"https://github.com/harsh-kosarkar07/harsh-kosarkar-portfolio",
     },
   ]
   return (
