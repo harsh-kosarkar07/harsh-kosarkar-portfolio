@@ -11,8 +11,54 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import { FaGitAlt } from "react-icons/fa";
 import { IoLogoGithub, IoLogoNpm } from "react-icons/io";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger) 
 const Skills = () => {
+  useGSAP(()=>{
+    gsap.from("#left-sec3", { 
+      opacity: 0, 
+      duration:1,
+      y:100,
+      scrollTrigger:{
+          trigger:"#left-sec3",
+          // scroller:"body",
+          start:"top 60%",
+          // end:"center 20%",
+          
+          
+      } 
+  });
+  gsap.from("#middle-sec3",{ 
+    opacity: 0, 
+    duration:1,
+    y:100,
+    scrollTrigger:{
+        trigger:"#middle-sec3",
+        // scroller:"body",
+        start:"top 70%",
+        // end:"center 20%",
+      
+        
+    } 
+});
+  
+    gsap.from("#right-sec3",{ 
+      opacity: 0, 
+      duration:1,
+      y:100,
+      scrollTrigger:{
+          trigger:"#right-sec3",
+          // scroller:"body",
+          start:"top 60%",
+          // end:"center 20%",
+                    
+      } 
+  });
+  })
   const data1 = [
     {
       icon: <SiHtml5 size={50} />,
@@ -70,7 +116,7 @@ const Skills = () => {
             <h1 className=" font-bold text-xl text-indigo-500 mb-2">
               Development <span className="text-[#e782f9]"> Skills</span>{" "}
             </h1>
-            <div className="my-5 flex flex-wrap gap-5">
+            <div id="left-sec3" className="my-5 flex flex-wrap gap-5">
               
               {data1.map((ele, i) => (
                 <div
@@ -90,7 +136,7 @@ const Skills = () => {
             <h1 className=" font-bold text-xl text-indigo-500 mb-2">
               Tools <span className="text-[#e782f9]"> I use </span>
             </h1>
-         <div className="my-5 flex flex-wrap gap-5">
+         <div id="middle-sec3" className="my-5 flex flex-wrap gap-5">
          {  data2.map((ele2,i)=>(<div key={i} className="map-2 flex gap-2 flex-col border-2 border-[#e782f9]   w-[140px] h-[100px] p-3 items-center shadow-lg hover:shadow-[#d56ee7]">
               <span>
                 {ele2.icon}
@@ -104,7 +150,7 @@ const Skills = () => {
           </div>
         </div>
         <div className=" part-2 xs:w-full md:w-[50%] flex justify-center items-center ">
-          <img src={SkillsImg} alt="" className=" w-[500px] " />
+          <img id="right-sec3" src={SkillsImg} alt="" className=" w-[500px] " />
         </div>
       </div>
     </div>

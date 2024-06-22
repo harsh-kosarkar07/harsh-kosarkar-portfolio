@@ -6,10 +6,11 @@ import Skills from "./Skills";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import Footer from "./Footer";
-
+ 
 const App = () => {
+ 
   return (
-    <div className=" bg-[#222137] text-white">
+    <div className=" overflow-x-hidden bg-[#222137] text-white">
       <Header />
       <Home />
       <About/>

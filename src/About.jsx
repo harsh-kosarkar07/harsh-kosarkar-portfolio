@@ -2,8 +2,42 @@ import React from "react";
 import myImg from "./assets/myImg.jpg";
 import { SiGithub } from "react-icons/si";
 import { BsLinkedin } from "react-icons/bs";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger) 
 const About = () => {
+useGSAP(()=>{
+  gsap.from("#left-sec2", { 
+    opacity: 0, 
+    duration:1,
+    y:100,
+    scrollTrigger:{
+        trigger:"#left-sec2",
+        // scroller:"body",
+        start:"top 60%",
+        // end:"center 20%",
+        
+        
+    } 
+});
+
+  gsap.from("#right-sec2",{ 
+    opacity: 0, 
+    duration:1,
+    y:100,
+    scrollTrigger:{
+        trigger:"#right-sec2",
+        // scroller:"body",
+        start:"top 60%",
+        // end:"center 20%",
+        
+        
+    } 
+});
+})
   return (
     <div name='about' className=" w-full px-5 sm:px-20 lg:px-40 pb-20">
       <h1 className=" text-2xl font-bold border-b-4 border-indigo-500 w-[71px] mb-7">
@@ -11,13 +45,13 @@ const About = () => {
       </h1>
       <div className=" w-full flex xs:flex-col md:flex-row gap-5">
         <div className="xs:w-full md:w-[50%]  ">
-          <img
+          <img id="left-sec2"
             src={myImg}
             alt=""
             className=" w-[500px] h-[400px] object-cover object-center rounded-md shadow-lg hover:shadow-[#6366F1]"
           />
         </div>
-        <div className="xs:w-full md:w-[50%] text-justify ">
+        <div id="right-sec2" className="xs:w-full md:w-[50%] text-justify ">
           <h1 className=" font-bold text-2xl text-indigo-500 mb-2">
             Hi there, I'm <span className=" text-[#B968C7]">Harsh</span>
           </h1>

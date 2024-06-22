@@ -3,8 +3,31 @@ import Project1 from "./assets/project-I.png";
 import Project2 from "./assets/project-II.png";
 import Project3 from "./assets/project-III.png";
 import Project4 from "./assets/project-IV.png";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger) 
 const Portfolio = () => {
+
+  useGSAP(()=>{
+    gsap.from("#cards", { 
+      opacity: 0, 
+      duration:1,
+      y:100,
+      scrollTrigger:{
+          trigger:"#cards",
+          // scroller:"body",
+          start:"top 60%",
+          // end:"center 20%",
+          
+          
+      } 
+  });
+  
+  })
+
   const works = [
     {
       Img:Project1,
@@ -41,7 +64,7 @@ const Portfolio = () => {
         My Recent <span className="text-[#e782f9]">Works</span>
       </h1>
       
-      <div className="  flex justify-center flex-wrap gap-5  ">
+      <div id="cards" className="  flex justify-center flex-wrap gap-5  ">
       {
         works.map((el,i)=>(
           <div key={i} className=" border-2 w-[300px] h-[320px] p-3 rounded-md  border-[#e782f9] shadow-md hover:shadow-[#d56ee7]">

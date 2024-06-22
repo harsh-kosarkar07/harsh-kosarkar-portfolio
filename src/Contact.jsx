@@ -1,13 +1,50 @@
 import React from "react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger) 
 const Contact = () => {
+  
+  useGSAP(()=>{
+    gsap.from("#contact-left", { 
+      opacity: 0, 
+      duration:1,
+      y:100,
+      scrollTrigger:{
+          trigger:"#contact-left",
+          // scroller:"body",
+          start:"top 60%",
+          // end:"center 20%",
+         
+          
+      } 
+  });
+
+  gsap.from("#contact-right", { 
+    opacity: 0, 
+    duration:1,
+    y:100,
+    scrollTrigger:{
+        trigger:"#contact-right",
+        // scroller:"body",
+        start:"top 60%",
+        // end:"center 20%",
+       
+        
+    } 
+});
+})
+
   return (
     <div name='contact' className="w-full px-5 my-28  sm:px-20 lg:px-40 pb-10 ">
       <h1 className=" text-2xl font-bold border-b-4 border-indigo-500 w-[89px]  mb-5">
         Contact
       </h1>
       <div className="contacts-container  flex justify-between lg:flex-row xs:flex-col  gap-10  ">
-        <div className="leftdiv ">
+        <div id="contact-left" className="leftdiv ">
           <div className=" mb-4">
             <h1 className="font-bold text-lg text-indigo-500 mb-2">EMAIL </h1>
             <p>harshkosarkar@gmail.com </p>
@@ -17,7 +54,7 @@ const Contact = () => {
             <p>Nagpur, Maharashtra, India. </p>
           </div>
         </div>
-        <form action="https://getform.io/f/lbkmxnkb" method="POST">
+        <form id="contact-right" action="https://getform.io/f/lbkmxnkb" method="POST">
           <div className="rightdiv flex  flex-col gap-5  ">
             <div className=" flex   gap-5">
               <input
