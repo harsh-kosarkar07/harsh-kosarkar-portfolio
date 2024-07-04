@@ -12,20 +12,31 @@ gsap.registerPlugin(ScrollTrigger)
 const Portfolio = () => {
 
   useGSAP(()=>{
-    gsap.from("#cards", { 
-      opacity: 0, 
-      duration:1,
-      y:100,
-      scrollTrigger:{
-          trigger:"#cards",
-          // scroller:"body",
-          start:"top 60%",
-          // end:"center 20%",
-          
-          
-      } 
-  });
+  //   gsap.from("#cards", { 
+  //     opacity: 0, 
+  //     duration:1,
+  //     y:100,
+  //     scrollTrigger:{
+  //         trigger:"#cards",
+  //         // scroller:"body",
+  //         start:"top 60%",
+  //         // end:"center 20%",
+  //     } 
+  // });
   
+  gsap.from("#card", { 
+    opacity: 0, 
+    duration:1,
+    stagger:.4,
+    y:100,
+    scrollTrigger:{
+        trigger:"#card",
+        // scroller:"body",
+        start:"top 60%",
+        // end:"center 20%",
+    } 
+});
+
   })
 
   const works = [
@@ -67,7 +78,7 @@ const Portfolio = () => {
       <div id="cards" className="  flex justify-center flex-wrap gap-5  ">
       {
         works.map((el,i)=>(
-          <div key={i} className=" border-2 w-[300px] h-[320px] p-3 rounded-md  border-[#e782f9] shadow-md hover:shadow-[#d56ee7]">
+          <div key={i} id="card" className=" border-2 w-[300px] h-[320px] p-3 rounded-md  border-[#e782f9] shadow-md hover:shadow-[#d56ee7]">
         <img
           src={el.Img}
           alt="projectImg"
